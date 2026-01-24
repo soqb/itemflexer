@@ -1,11 +1,7 @@
 plugins {
-    id 'fabric-loom' version '1.7.+'
+    id 'fabric-loom' version '1.15-SNAPSHOT'
 }
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
-
-archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
@@ -34,8 +30,8 @@ dependencies {
     modImplementation 'com.github.P03W:Microconfig:2.2.1'
     include 'com.github.P03W:Microconfig:2.2.1'
 
-    modImplementation("eu.pb4:placeholder-api:2.5.1+1.21.3")
-    include("eu.pb4:placeholder-api:2.5.1+1.21.3")
+    modImplementation("eu.pb4:placeholder-api:2.8.1+1.21.10")
+    include("eu.pb4:placeholder-api:2.8.1+1.21.10")
 }
 
 processResources {
@@ -46,7 +42,7 @@ processResources {
     }
 }
 
-tasks.withType(JavaCompile) {
+tasks.withType(JavaCompile).configureEach {
     options.encoding = "UTF-8"
 }
 

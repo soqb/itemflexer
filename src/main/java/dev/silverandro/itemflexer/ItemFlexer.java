@@ -95,7 +95,7 @@ public class ItemFlexer implements ModInitializer {
             return 0;
         }
 
-        // Make sure their actually holding something
+        // Make sure they're actually holding something
         if (stack.getItem() != Items.AIR) {
             // Put them on cooldown
             cooldowns.put(player, config.cooldown);
@@ -109,7 +109,7 @@ public class ItemFlexer implements ModInitializer {
             }
 
             Text message = Placeholders.parseText(text, PlaceholderContext.of(player));
-            for (ServerPlayerEntity other : player.server.getPlayerManager().getPlayerList()) {
+            for (ServerPlayerEntity other : source.getServer().getPlayerManager().getPlayerList()) {
                 other.sendMessage(message, false);
             }
             return 1;
